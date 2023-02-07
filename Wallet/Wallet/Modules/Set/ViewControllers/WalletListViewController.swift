@@ -20,7 +20,7 @@ class WalletListViewController: UIViewController {
     let disposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
-    var data: Variable<[Wallet]> = Variable(EtherKeystore.shared.wallets)
+    var data: BehaviorRelay<[Wallet]> = BehaviorRelay<[Wallet]>(value: EtherKeystore.shared.wallets)
     var coordinator: BackupCoordinator?
     var accountCoordinator: AccountsCoordinator?
 
@@ -96,7 +96,7 @@ class WalletListViewController: UIViewController {
                 window.makeKeyAndVisible()
             }
         } else {
-            data.value = EtherKeystore.shared.wallets
+            data.accept( EtherKeystore.shared.wallets )
         }
     }
     

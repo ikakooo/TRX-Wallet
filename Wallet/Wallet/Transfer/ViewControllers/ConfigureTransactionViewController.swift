@@ -184,7 +184,7 @@ class ConfigureTransactionViewController: FormViewController {
             if dataString.isEmpty {
                 return Data()
             }
-            return Data(hex: dataString.drop0x)
+            return Data(hexString: dataString.drop0x) ?? Data()
         }()
 
         let configuration = TransactionConfiguration(

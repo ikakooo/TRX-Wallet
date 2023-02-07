@@ -44,14 +44,14 @@ class FrozenView: UIView, XibLoadable, Popable {
         frozenButton.setBackgroundColor(UIColor.normalBackgroundColor, forState: .normal)
         frozenButton.setBackgroundColor(UIColor.disabledBackgroundColor, forState: .disabled)
         
-        (frozenButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (frozenButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(Int(500)), scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.frozenButtonClick()
             })
             .disposed(by: disposeBag)
         
-        (closeButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (closeButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(Int(500)), scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.popDismiss()

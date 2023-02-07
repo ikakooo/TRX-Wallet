@@ -16,7 +16,7 @@ class TransactionsListViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    var data: Variable<[TronTransaction]> = Variable([])
+    var data: BehaviorRelay<[TronTransaction]> = BehaviorRelay(value: [])
     var firstLoad: Bool = true
     
     @IBOutlet weak var tableView: UITableView!
@@ -65,7 +65,7 @@ class TransactionsListViewController: UIViewController {
                         }
                         return false
                     })
-                    self?.data.value = value
+                    self?.data.accept(value)
                 } else {
                     self?.tableView.reloadData()
                 }

@@ -35,7 +35,7 @@ class NonFungibleTokensViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.tableFooterView = footer
         view.addSubview(tableView)
-        tableView.register(R.nib.nonFungibleTokenViewCell(), forCellReuseIdentifier: R.nib.nonFungibleTokenViewCell.name)
+        tableView.register(R.nib.nonFungibleTokenViewCell)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),

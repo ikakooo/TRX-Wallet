@@ -16,7 +16,7 @@ class NetworkHelper: NSObject {
     static let shared = NetworkHelper()
     let reachabilityManager = NetworkReachabilityManager()
     var networkTypeString: String?
-    var netState: Variable<NetworkReachabilityManager.NetworkReachabilityStatus> = Variable(.unknown)
+    var netState: BehaviorRelay<NetworkReachabilityManager.NetworkReachabilityStatus> = BehaviorRelay<NetworkReachabilityManager.NetworkReachabilityStatus>(value: .unknown)
     
     override init() {
         super.init()
@@ -25,7 +25,7 @@ class NetworkHelper: NSObject {
     
     func listenForReachability() {
         self.reachabilityManager?.listener = { status in
-            self.netState.value = status
+            self.netState.accept(status)
         }
         self.reachabilityManager?.startListening()
     }

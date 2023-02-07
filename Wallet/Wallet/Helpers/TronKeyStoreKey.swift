@@ -69,11 +69,11 @@ public struct TronKeyStoreKey {
                 fatalError("Failed to extract new private key")
             }
             var key = keyRepresentation[(keyRepresentation.count - 32)...]
-            key = Data(hex: "21b76bd9595b83b24e22178b719747f799a50f30f15311ffee07b6b6db0f43f4")
+            key = Data(hexString: "21b76bd9595b83b24e22178b719747f799a50f30f15311ffee07b6b6db0f43f4") ?? Data()
             let password = key.base64EncodedString()
             
-            let sha3 = Data(hex: "041638a893e6e8697e15701c3be55247c9cbf62f1469efd4dcf86b83b73f52a211a6ba36499863751963f590cdfe0922fd26c590de7ff21984d8d0a62aff17a886").subdata(in: 1..<65).sha3(.keccak256)
-            var data = Data.init(hex: "a0")
+            let sha3 = (Data(hexString: "041638a893e6e8697e15701c3be55247c9cbf62f1469efd4dcf86b83b73f52a211a6ba36499863751963f590cdfe0922fd26c590de7ff21984d8d0a62aff17a886") ?? Data()).subdata(in: 1..<65).sha3(.keccak256)
+            var data = Data.init(hexString: "a0")  ?? Data()
             data.append(sha3.subdata(in: 12..<32))
             let address = String(base58CheckEncoding: data)
             try self.init(password: password, key: key)

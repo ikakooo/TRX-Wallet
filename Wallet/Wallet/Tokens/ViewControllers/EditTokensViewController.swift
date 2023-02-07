@@ -95,7 +95,7 @@ class EditTokensViewController: UITableViewController {
     }
 
     func configureTableView() {
-        tableView.register(R.nib.editTokenTableViewCell(), forCellReuseIdentifier: R.nib.editTokenTableViewCell.name)
+       // tableView.register(R.nib.editTokenTableViewCell)
         tableView.tableHeaderView = searchController.searchBar
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = StyleLayout.TableView.separatorColor

@@ -11,13 +11,14 @@ import MJRefresh
 
 extension UIScrollView {
     func addRefreshHeader(block: (() -> Void)?) {
+        guard let block else { return }
         let header = MJRefreshNormalHeader(refreshingBlock: block)
-        header?.ignoredScrollViewContentInsetTop = 20
+        header.ignoredScrollViewContentInsetTop = 20
         self.mj_header = header
         
     }
     
     func endRefresh() {
-        self.mj_header.endRefreshing()
+        self.mj_header?.endRefreshing()
     }
 }

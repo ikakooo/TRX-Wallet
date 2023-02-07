@@ -21,7 +21,7 @@ class TokensBalanceService {
         Session.send(request) { result in
             switch result {
             case .success(let balance):
-                let biguint = BigUInt(Data(hex: balance))
+                let biguint = BigUInt(Data(hexString: balance) ?? Data())
                 completion(.success(BigInt(sign: .plus, magnitude: biguint)))
             case .failure(let error):
                 NSLog("getPrice error \(error)")

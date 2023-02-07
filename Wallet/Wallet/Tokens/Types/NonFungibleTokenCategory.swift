@@ -35,15 +35,15 @@ class NonFungibleTokenCategory: Object, Decodable {
         self.init(name: name, items: itemsList)
     }
 
-    required init() {
+    required override init() {
         super.init()
     }
 
-    required init(value: Any, schema: RLMSchema) {
-        super.init(value: value, schema: schema)
-    }
-
-    required init(realm: RLMRealm, schema: RLMObjectSchema) {
-        super.init(realm: realm, schema: schema)
-    }
+//    required init(value: Any, schema: RLMSchema) {
+//        super.init(value: value, schema: schema)
+//    }
+//
+//    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+//        super.init(realm: realm, schema: schema)
+//    }
 }

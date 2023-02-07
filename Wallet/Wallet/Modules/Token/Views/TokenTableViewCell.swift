@@ -56,9 +56,9 @@ class TokenTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        ServiceHelper.shared.isWatchMode.asObservable()
-        .bind(to: participateButton.rx.isHidden)
-        .disposed(by: cellDisposeBag)
+//        ServiceHelper.shared.isWatchMode.asObservable()
+//        .bind(to: participateButton.rx.isHidden)
+//        .disposed(by: cellDisposeBag)
         // Initialization code
         configureUI()
     }

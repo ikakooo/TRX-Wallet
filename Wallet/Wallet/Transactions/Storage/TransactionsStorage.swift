@@ -51,7 +51,7 @@ class TransactionsStorage {
 
     func add(_ items: [Transaction]) {
         try! realm.write {
-            realm.add(items, update: true)
+            realm.add(items, update: .all)
         }
     }
 
@@ -83,7 +83,7 @@ class TransactionsStorage {
         try! realm.write {
             let tempObject = transaction
             tempObject.internalState = state.rawValue
-            realm.add(tempObject, update: true)
+            realm.add(tempObject, update: .all)
         }
     }
 

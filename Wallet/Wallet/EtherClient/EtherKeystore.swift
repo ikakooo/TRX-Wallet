@@ -185,7 +185,7 @@ open class EtherKeystore: Keystore {
     }
     
     func saveAccount(_ account: TrustKeystore.Account) throws {
-        try keyStore.addAccount(account: account)
+//        try keyStore.addAccount(account: account)
     }
     
     func importKeystore(value: String, password: String, newPassword: String) -> Result<TrustKeystore.Account, KeystoreError> {

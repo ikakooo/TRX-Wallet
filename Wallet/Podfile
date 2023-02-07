@@ -1,4 +1,4 @@
-platform :ios, '10.0'
+platform :ios, '13.0'
 inhibit_all_warnings!
 source 'https://github.com/CocoaPods/Specs.git'
 
@@ -30,7 +30,7 @@ target 'Wallet' do
     pod 'Branch'
     # pod 'web3swift', :git=>'https://github.com/BANKEX/web3swift', :branch=>'master'
     pod 'SAMKeychain'
-    pod 'TrustWeb3Provider', :git=>'https://github.com/TrustWallet/trust-web3-provider', :branch=>'master'
+    pod 'TrustWeb3Provider', :git => 'https://github.com/trustwallet/trust-web3-provider', :branch => 'master'
     pod 'JdenticonSwift'
     pod 'URLNavigator'
     pod 'Ruler'
@@ -67,7 +67,7 @@ post_install do |installer|
     installer.pods_project.targets.each do |target|
         if ['JSONRPCKit'].include? target.name
             target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '3.0'
+                config.build_settings['SWIFT_VERSION'] = '4.0'
             end
         end
         if ['TrustKeystore'].include? target.name

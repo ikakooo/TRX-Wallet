@@ -75,7 +75,7 @@ class SearchTokenResultsController: UITableViewController {
     }
 
     private func configureTableView() {
-        tableView.register(R.nib.editTokenTableViewCell(), forCellReuseIdentifier: R.nib.editTokenTableViewCell.name)
+       // tableView.register(R.nib.editTokenTableViewCell)
         tableView.keyboardDismissMode = .onDrag
     }
 

@@ -23,7 +23,7 @@
   @class BlockReference;
   @class BytesMessage;
   @class DynamicProperties;
-  @class EmptyMessage;
+ // @class EmptyMessage;
   @class FreezeBalanceContract;
   @class NodeList;
   @class NumberMessage;
@@ -48,7 +48,7 @@
 #endif
 
 @class GRPCProtoCall;
-
+@class EmptyMessage;
 
 NS_ASSUME_NONNULL_BEGIN
 

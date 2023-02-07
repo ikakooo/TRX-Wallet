@@ -15,7 +15,7 @@ class VoteViewController: UIViewController {
 
     let disposeBag = DisposeBag()
     
-    var data: Variable<[Witness]> = Variable([])
+    var data: BehaviorRelay<[Witness]> = BehaviorRelay(value: [])
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -53,7 +53,7 @@ class VoteViewController: UIViewController {
         let a2 = data.value.filter({ (object) -> Bool in
             return !voteAddressArray.contains(object.address.addressString)
         })
-        self.data.value = a1 + a2
+        self.data.accept(a1 + a2)
     }
     
     func loadData() {
@@ -67,7 +67,7 @@ class VoteViewController: UIViewController {
                 let a2 = array.filter({ (object) -> Bool in
                     return !voteAddressArray.contains(object.address.addressString)
                 })
-                self?.data.value = a1 + a2
+                self?.data.accept(a1 + a2)
                 
             }
         

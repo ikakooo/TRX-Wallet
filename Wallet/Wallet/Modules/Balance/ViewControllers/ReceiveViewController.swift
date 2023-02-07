@@ -19,7 +19,7 @@ class ReceiveViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var codeImageView: UIImageView!
-    let disposeBag = DisposeBag()
+    let disposeBug = DisposeBag()
     var addressString: String = "" {
         didSet {
             addressLabel.text = addressString
@@ -32,14 +32,13 @@ class ReceiveViewController: UIViewController {
         tipLabel.text = R.string.tron.balanceReceiveAddressTip()
     
         copyButton.setTitle(R.string.tron.balanceReceiveButtonCopy(), for: .normal)
-        ServiceHelper.shared.account.asObservable()
-            .subscribe(onNext: {[weak self] (account) in
-                if let address = account?.address.addressString {
-                    self?.addressString = address
-                    self?.changeQRCode(address: address)
-                }
-            })
-        .disposed(by: disposeBag)
+       // ServiceHelper.shared.account.asObservable()
+//            .subscribe(onNext: {[weak self] (account) in
+//                if let address = account?.address.addressString {
+//                    self?.addressString = address
+//                    self?.changeQRCode(address: address)
+//                }
+//            })//.disposed(by: disposeBug)
         // Do any additional setup after loading the view.
     }
     

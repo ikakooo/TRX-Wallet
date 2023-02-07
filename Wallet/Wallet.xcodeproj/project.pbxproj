@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3374D12A2992983700CDF078 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3374D1292992983700CDF078 /* R.generated.swift */; };
+		3374D12F29929CC000CDF078 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3374D12E29929CC000CDF078 /* info.plist */; };
 		36075F3920BFCCDB00E6AF13 /* ColdTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36075F3820BFCCDB00E6AF13 /* ColdTransactionView.swift */; };
 		36075F3B20BFCCE600E6AF13 /* ColdTransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36075F3A20BFCCE600E6AF13 /* ColdTransactionView.xib */; };
 		36075F3D20BFD9B100E6AF13 /* OffLineSignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36075F3C20BFD9B100E6AF13 /* OffLineSignViewController.swift */; };
@@ -356,7 +358,6 @@
 		368C8608209C70190089D906 /* EtherClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368C84B8209C70170089D906 /* EtherClient.swift */; };
 		368C8609209C70190089D906 /* TransactionSigning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368C84B9209C70170089D906 /* TransactionSigning.swift */; };
 		368C860A209C70190089D906 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368C84BA209C70170089D906 /* Wallet.swift */; };
-		368C860D209C72640089D906 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368C860C209C72640089D906 /* R.generated.swift */; };
 		368C8610209C88BF0089D906 /* WalletHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368C860F209C88BF0089D906 /* WalletHelper.swift */; };
 		36B15CA720AEE16800DB006B /* ImportTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B15CA520AEE16800DB006B /* ImportTypeTableViewCell.swift */; };
 		36B68B4020CA82EB006E891C /* Browser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B68B3E20CA82EA006E891C /* Browser.storyboard */; };
@@ -421,6 +422,8 @@
 
 /* Begin PBXFileReference section */
 		2C5162AE5ADEF1BC135CACA9 /* Pods-Wallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wallet/Pods-Wallet.debug.xcconfig"; sourceTree = "<group>"; };
+		3374D1292992983700CDF078 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		3374D12E29929CC000CDF078 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		36075F3820BFCCDB00E6AF13 /* ColdTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColdTransactionView.swift; sourceTree = "<group>"; };
 		36075F3A20BFCCE600E6AF13 /* ColdTransactionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColdTransactionView.xib; sourceTree = "<group>"; };
 		36075F3C20BFD9B100E6AF13 /* OffLineSignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffLineSignViewController.swift; sourceTree = "<group>"; };
@@ -481,7 +484,6 @@
 		368C82EA209C432F0089D906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		368C82EC209C43300089D906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		368C82EF209C43300089D906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		368C82F1209C43300089D906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		368C82F9209C44AA0089D906 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		368C82FB209C47E90089D906 /* CreateWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewController.swift; sourceTree = "<group>"; };
 		368C82FF209C700B0089D906 /* PaymentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentCoordinator.swift; sourceTree = "<group>"; };
@@ -794,7 +796,6 @@
 		368C84B8209C70170089D906 /* EtherClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtherClient.swift; sourceTree = "<group>"; };
 		368C84B9209C70170089D906 /* TransactionSigning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionSigning.swift; sourceTree = "<group>"; };
 		368C84BA209C70170089D906 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
-		368C860C209C72640089D906 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		368C860F209C88BF0089D906 /* WalletHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHelper.swift; sourceTree = "<group>"; };
 		36B15CA520AEE16800DB006B /* ImportTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTypeTableViewCell.swift; sourceTree = "<group>"; };
 		36B68B3E20CA82EA006E891C /* Browser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Browser.storyboard; sourceTree = "<group>"; };
@@ -1066,7 +1067,7 @@
 		368C82E4209C432F0089D906 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				368C860C209C72640089D906 /* R.generated.swift */,
+				3374D1292992983700CDF078 /* R.generated.swift */,
 				368C82E5209C432F0089D906 /* AppDelegate.swift */,
 				36B68B4620CA8E37006E891C /* html */,
 				36C62A8320511F3D005A36DF /* Helpers */,
@@ -1097,7 +1098,7 @@
 				3666D9B820A0208D00EF7F87 /* Wallet-Bridging-Header.h */,
 				36CCC1A720AD29100067B8E6 /* Tron.strings */,
 				3666DB3F20A1718100EF7F87 /* gRPC */,
-				368C82F1209C43300089D906 /* Info.plist */,
+				3374D12E29929CC000CDF078 /* info.plist */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -2242,7 +2243,6 @@
 				368C82DF209C432F0089D906 /* Frameworks */,
 				368C82E0209C432F0089D906 /* Resources */,
 				331F6E130751F150A38E717C /* [CP] Embed Pods Frameworks */,
-				ADFEB2B5C0618C98B5A9A02B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2260,7 +2260,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1410;
 				ORGANIZATIONNAME = newborntown;
 				TargetAttributes = {
 					368C82E1209C432F0089D906 = {
@@ -2270,7 +2270,7 @@
 				};
 			};
 			buildConfigurationList = 368C82DD209C432F0089D906 /* Build configuration list for PBXProject "Wallet" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -2327,6 +2327,7 @@
 				36CCC1A520AD29100067B8E6 /* Tron.strings in Resources */,
 				36173AFB209D61F30082CD1E /* Balance.storyboard in Resources */,
 				36075F4320BFF5B200E6AF13 /* SignedTransactionView.xib in Resources */,
+				3374D12F29929CC000CDF078 /* info.plist in Resources */,
 				36075F3B20BFCCE600E6AF13 /* ColdTransactionView.xib in Resources */,
 				36C62AC620A30655005A36DF /* VoteInputView.xib in Resources */,
 				368C8594209C70180089D906 /* Localizable.strings in Resources */,
@@ -2348,113 +2349,21 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Wallet/Pods-Wallet-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/Branch/Branch.framework",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/JSONRPCKit/JSONRPCKit.framework",
-				"${BUILT_PRODUCTS_DIR}/JdenticonSwift/JdenticonSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCodeReaderViewController/QRCodeReaderViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-14/iOS/RevealServer.framework",
-				"${BUILT_PRODUCTS_DIR}/Ruler/Ruler.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
-				"${BUILT_PRODUCTS_DIR}/SeedStackViewController/StackViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/StatefulViewController/StatefulViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
-				"${BUILT_PRODUCTS_DIR}/TrezorCrypto/TrezorCrypto.framework",
-				"${BUILT_PRODUCTS_DIR}/TrustCore/TrustCore.framework",
-				"${BUILT_PRODUCTS_DIR}/TrustKeystore/TrustKeystore.framework",
-				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
-				"${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wallet/Pods-Wallet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Branch.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONRPCKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JdenticonSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReaderViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ruler.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StackViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StatefulViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TrezorCrypto.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TrustCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TrustKeystore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URLNavigator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wallet/Pods-Wallet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wallet/Pods-Wallet-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wallet/Pods-Wallet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		368C860B209C72210089D906 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -2464,7 +2373,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Wallet\"";
+			shellScript = "## \"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Wallet\"\n## \"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Wallet/R.generated.swift\" --generators string,color\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Wallet/R.generated.swift\"\n## set -o pipefail\n## \"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Wallet/R.generated.swift\" | (grep -v \"warning: \\\\[R.swift\\\\] Strings file '[^']*' ([a-zA-Z0-9_]*) is missing translations for keys\" || true)\n";
 		};
 		9298441E1F07EBE8B902233F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2482,24 +2391,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ADFEB2B5C0618C98B5A9A02B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Wallet/Pods-Wallet-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/TrustWeb3Provider/TrustWeb3Provider.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TrustWeb3Provider.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wallet/Pods-Wallet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2560,10 +2451,10 @@
 				3666D9DD20A0260300EF7F87 /* UViewController+Extension.swift in Sources */,
 				368C85F9209C70190089D906 /* EstimateGasRequest.swift in Sources */,
 				3666DB5420A1718100EF7F87 /* Discover.pbobjc.m in Sources */,
+				3374D12A2992983700CDF078 /* R.generated.swift in Sources */,
 				368C8529209C70180089D906 /* TokenBalanceOperation.swift in Sources */,
 				3666D9DA20A0260300EF7F87 /* UIFontExtension.swift in Sources */,
 				368C856D209C70180089D906 /* TransactionItemState.swift in Sources */,
-				368C860D209C72640089D906 /* R.generated.swift in Sources */,
 				368C85BE209C70190089D906 /* PassphraseViewModel.swift in Sources */,
 				36CCC19420A98EA60067B8E6 /* WalletListViewController.swift in Sources */,
 				368C85B3209C70190089D906 /* DepositCoordinator.swift in Sources */,
@@ -2943,6 +2834,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2965,6 +2857,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2990,7 +2883,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -3003,6 +2896,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -3025,6 +2919,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3044,7 +2939,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -3060,14 +2955,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN2KLW59S5;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = J4383386FU;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Wallet/HSEther",
 				);
 				INFOPLIST_FILE = Wallet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				INFOPLIST_KEY_CFBundleDisplayName = ikakooo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3076,7 +2975,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Wallet/HSEther",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = newhorizonlabs.Wallet;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = newhorizonlabs.Wallettt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wallet/Wallet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3092,14 +2992,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN2KLW59S5;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = J4383386FU;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Wallet/HSEther",
 				);
 				INFOPLIST_FILE = Wallet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				INFOPLIST_KEY_CFBundleDisplayName = ikakooo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3108,7 +3012,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Wallet/HSEther",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = newhorizonlabs.Wallet;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = newhorizonlabs.Wallettt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wallet/Wallet-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -3126,7 +3031,7 @@
 				368C82F3209C43300089D906 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		368C82F4209C43300089D906 /* Build configuration list for PBXNativeTarget "Wallet" */ = {
 			isa = XCConfigurationList;
@@ -3135,7 +3040,7 @@
 				368C82F6209C43300089D906 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

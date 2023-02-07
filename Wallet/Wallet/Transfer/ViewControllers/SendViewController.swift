@@ -222,7 +222,7 @@ extension SendViewController: QRCodeReaderDelegate {
         addressRow?.reload()
 
         if let dataString = result.params["data"] {
-            data = Data(hex: dataString.drop0x)
+            data = Data(hexString: dataString.drop0x) ?? Data()
         } else {
             data = Data()
         }

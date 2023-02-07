@@ -16,7 +16,7 @@ class TokenListViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     let disposeBag = DisposeBag()
     
-    var data: Variable<[AssetIssueContract]> = Variable([])
+    var data: BehaviorRelay<[AssetIssueContract]> = BehaviorRelay<[AssetIssueContract]>(value:[])
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class TokenListViewController: UIViewController {
         displayLoading()
         ServiceHelper.shared.service.getAssetIssueList(withRequest: EmptyMessage()) {[weak self] (list, error) in
             if let array = list?.assetIssueArray as? [AssetIssueContract] {
-                self?.data.value = array
+                self?.data.accept(array)
             }
             self?.hideLoading()
             self?.tableView.endRefresh()

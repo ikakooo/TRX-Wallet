@@ -21,23 +21,23 @@ class ServiceHelper: NSObject {
     static let solidityNode: String = "47.89.244.227:50051"
     let service: TWallet = TWallet(host: ServiceHelper.fullNode)
     let solidityService: WalletExtension = WalletExtension(host: ServiceHelper.solidityNode)
-    var account: Variable<TronAccount?> = Variable(nil)
+    var account: BehaviorRelay<TronAccount?> = BehaviorRelay<TronAccount?>(value: nil)
     var trustAccount: TrustKeystore.Account?
-    var isWatchMode: Variable<Bool> = Variable(false)
-    var walletMode: Variable<WalletModeState> = Variable(.hot)
+    var isWatchMode: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: true)
+    var walletMode: BehaviorRelay<WalletModeState> = BehaviorRelay<WalletModeState>(value: .hot)
     
     var currentWallet: Wallet? {
         didSet {
             if let w = currentWallet {
                 let a = TronAccount()
                 a.address = w.address.data
-                account.value = a
+                account.accept(a)
                 keystore.recentlyUsedWallet = w
                 trustAccount = keystore.getAccount(for: w.address)
                 if w.type == .address(w.address) {
-                    isWatchMode.value = true
+                    isWatchMode.accept(true)
                 } else {
-                    isWatchMode.value = false
+                    isWatchMode.accept(false)
                 }
             }
         }
@@ -74,13 +74,13 @@ class ServiceHelper: NSObject {
         if let w = currentWallet {
             let a = TronAccount()
             a.address = w.address.data
-            account.value = a
+            account.accept(a)
             trustAccount = keystore.getAccount(for: w.address)
             keystore.recentlyUsedWallet = w
             if w.type == .address(w.address) {
-                isWatchMode.value = true
+                isWatchMode.accept(true)
             } else {
-                isWatchMode.value = false
+                isWatchMode.accept(false)
             }
         }
     }
@@ -94,7 +94,7 @@ class ServiceHelper: NSObject {
                 if let array = model.votesArray as? [Vote] {
                     self?.voteArray = array
                 }
-                self?.account.value = model
+                self?.account.accept (model)
                 
             }
         }

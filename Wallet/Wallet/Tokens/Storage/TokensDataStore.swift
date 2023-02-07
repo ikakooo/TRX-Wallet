@@ -76,9 +76,9 @@ class TokensDataStore {
                     tokenObject.balance = self.getBalance(for: tokenObject, with: self.tickers())
                     return tokenObject
                 }
-                realm.add(tokenObjectsWithBalance, update: true)
+                realm.add(tokenObjectsWithBalance, update: .all)
             } else {
-                realm.add(tokens, update: true)
+                realm.add(tokens, update: .all)
             }
         }
     }
@@ -111,7 +111,7 @@ class TokensDataStore {
                     "balance": tokenBalance,
                 ]
 
-                realm.create(TokenObject.self, value: update, update: true)
+                realm.create(TokenObject.self, value: update, update: .all)
             }
         }
     }
@@ -128,7 +128,7 @@ class TokensDataStore {
                         "balance": tokenBalance,
                     ]
 
-                    realm.create(TokenObject.self, value: update, update: true)
+                    realm.create(TokenObject.self, value: update, update: .all)
                 }
             }
     }
@@ -146,7 +146,7 @@ class TokensDataStore {
                             "symbol": token.symbol,
                             "decimals": token.decimals,
                         ]
-                        realm.create(TokenObject.self, value: update, update: true)
+                        realm.create(TokenObject.self, value: update, update: .all)
                 }
             }
         }
@@ -157,7 +157,7 @@ class TokensDataStore {
             return
         }
         try? realm.write {
-            realm.add(tickers, update: true)
+            realm.add(tickers, update: .all)
         }
     }
 

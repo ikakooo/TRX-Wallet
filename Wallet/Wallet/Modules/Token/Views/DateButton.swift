@@ -14,7 +14,7 @@ class DateButton: UIButton {
 
     var pickerView: UIDatePicker = UIDatePicker()
     let disposeBag = DisposeBag()
-    var date: Variable<Date?> = Variable(nil)
+    var date: BehaviorRelay<Date?> = BehaviorRelay(value: nil)
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -27,7 +27,7 @@ class ColdTransactionView: UIView, XibLoadable, Popable {
     
     @IBOutlet weak var transactionDataLabel: UILabel!
     
-    var signedTransaction: Variable<TronTransaction?> = Variable(nil)
+    var signedTransaction: BehaviorRelay<TronTransaction?> = BehaviorRelay(value:nil)
 //    var successBlock:((Return?, Error?) -> Void)?
     var cancleBlock:(() -> Void)?
     var finishBlock:((TronTransaction) -> Void)?
@@ -40,7 +40,7 @@ class ColdTransactionView: UIView, XibLoadable, Popable {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
-        (closeButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (closeButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.cancleBlock?()
@@ -48,28 +48,28 @@ class ColdTransactionView: UIView, XibLoadable, Popable {
             })
             .disposed(by: disposeBag)
         
-        (nextButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (nextButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.nextStep()
             })
             .disposed(by: disposeBag)
         
-        (previousButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (previousButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.previousStep()
             })
             .disposed(by: disposeBag)
         
-        (scanButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (scanButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.openReader()
             })
             .disposed(by: disposeBag)
         
-        (confirmButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (confirmButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 if let value = self?.signedTransaction.value {
@@ -178,10 +178,10 @@ extension ColdTransactionView: QRCodeReaderDelegate {
     func reader(_ reader: QRCodeReaderViewController!, didScanResult result: String!) {
         reader.stopScanning()
         transactionDataLabel.text = result
-        let data = Data(hex: result)
+        let data = Data(hexString: result) ?? Data()
         do {
             let transaction = try TronTransaction.parse(from: data)
-            self.signedTransaction.value = transaction
+            self.signedTransaction.accept( transaction)
         } catch {
             HUD.showError(error: "No Transaction Information")
         }

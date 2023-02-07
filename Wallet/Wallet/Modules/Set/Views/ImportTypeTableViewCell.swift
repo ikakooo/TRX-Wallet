@@ -96,12 +96,12 @@ open class ImportTypeTableViewCell<T: Equatable> : Cell<T>, CellType {
         detailTextLabel?.text = nil
         
         updateSegmentedControl()
-        segmentedControl.selectedSegmentIndex = selectedIndex() ?? UISegmentedControlNoSegment
+        segmentedControl.selectedSegmentIndex = UInt(selectedIndex() ?? UISegmentedControlNoSegment)
         segmentedControl.isEnabled = !row.isDisabled
     }
     
     @objc func valueChanged() {
-        row.value =  (row as! ImportTypeRow<T>).options?[segmentedControl.selectedSegmentIndex]
+        row.value =  (row as! ImportTypeRow<T>).options?[Int(segmentedControl.selectedSegmentIndex)]
     }
     
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

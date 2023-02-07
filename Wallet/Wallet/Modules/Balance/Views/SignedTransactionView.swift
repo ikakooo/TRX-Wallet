@@ -22,14 +22,14 @@ class SignedTransactionView: UIView, XibLoadable, Popable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        (closeButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (closeButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(500) , scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.popDismiss()
             })
             .disposed(by: disposeBag)
         
-        (finishButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (finishButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.finishBlock?()

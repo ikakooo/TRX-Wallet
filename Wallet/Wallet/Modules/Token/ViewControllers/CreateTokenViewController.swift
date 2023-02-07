@@ -70,19 +70,19 @@ class CreateTokenViewController: UIViewController {
     
     @IBOutlet weak var checkButton: UIButton!
     
-    var name: Variable<String> = Variable("")
-    var abbreviation: Variable<String> = Variable("")
-    var total: Variable<String> = Variable("")
-    var descriptionString: Variable<String> = Variable("")
-    var url: Variable<String> = Variable("")
-    var trxString: Variable<String> = Variable("")
-    var tokenNumString: Variable<String> = Variable("")
+    var name: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var abbreviation: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var total: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var descriptionString:BehaviorRelay<String> = BehaviorRelay(value: "")
+    var url: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var trxString: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var tokenNumString: BehaviorRelay<String> = BehaviorRelay(value: "")
     
-    var startTime: Variable<String> = Variable("")
-    var endTime: Variable<String> = Variable("")
+    var startTime: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var endTime: BehaviorRelay<String> = BehaviorRelay(value: "")
     
-    var freezeNumber: Variable<Int64> = Variable(0)
-    var freezeDays: Variable<Int64> = Variable(0)
+    var freezeNumber: BehaviorRelay<Int64> = BehaviorRelay(value: 0)
+    var freezeDays: BehaviorRelay<Int64> = BehaviorRelay(value: 0)
     
     let disposeBag = DisposeBag()
     

@@ -33,9 +33,9 @@ class CreateWalletViewController: UIViewController {
     @IBOutlet weak var copyAddressButton: UIButton!
     @IBOutlet var checkButtons: [UIButton]!
     
-    var address: Variable<String> = Variable("")
-    var password: Variable<String> = Variable("")
-    var repassword: Variable<String> = Variable("")
+    var address: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var password: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var repassword: BehaviorRelay<String> = BehaviorRelay(value: "")
     
     var account: TrustKeystore.Account?
     var coordinator: WalletCoordinator?
@@ -57,7 +57,7 @@ class CreateWalletViewController: UIViewController {
             case .success(let account):
                 print(account.address)
                 let string = String(base58CheckEncoding: account.address.data)
-                self.address.value = string
+                self.address.accept( string )
                 self.export(account: account)
                 self.account = account
             case .failure(let error):
@@ -133,7 +133,7 @@ class CreateWalletViewController: UIViewController {
         switch result {
         case .success(let data):
             let string = data.hexString
-            self.password.value = string
+            self.password.accept( string )
             print(string)
         default:
             break
@@ -141,7 +141,7 @@ class CreateWalletViewController: UIViewController {
     }
 
     @objc func pasteButtonClick() {
-        repassword.value = UIPasteboard.general.string ?? ""
+        repassword.accept( UIPasteboard.general.string ?? "")
         
     }
     

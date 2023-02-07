@@ -39,7 +39,7 @@ class BalanceViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    var data: Variable<[AccountAsset]> = Variable([])
+    var data: BehaviorRelay<[AccountAsset]> = BehaviorRelay<[AccountAsset]>(value: [])
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,21 +65,21 @@ class BalanceViewController: UIViewController {
             })
         .disposed(by: disposeBag)
         
-        (frozenButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (frozenButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
         .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.frozenButtonClick()
             })
         .disposed(by: disposeBag)
         
-        (unfrozenButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (unfrozenButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.unfrozenButtonClick()
             })
             .disposed(by: disposeBag)
         
-        (sendButton.rx.tap).debounce(0.5, scheduler: MainScheduler.instance)
+        (sendButton.rx.tap).debounce(DispatchTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .asObservable()
             .subscribe(onNext: {[weak self] (_) in
                 self?.sendButtonClick()
@@ -230,7 +230,7 @@ class BalanceViewController: UIViewController {
     }
     
     func update(model: TronAccount) {
-        self.data.value = model.assetArray
+        self.data.accept( model.assetArray)
         self.balanceLabel.text = (Double(model.balance)/1000000.0).numberFormat()
         self.bandWidthLabel.text = model.netUsage.string
         if let array = model.frozenArray as? [Account_Frozen] {
@@ -278,7 +278,7 @@ class BalanceViewController: UIViewController {
     
     @objc func showOfflineSignVC(dataString: String) {
         let vc = R.storyboard.balance.offLineSignViewController()!
-        let data = Data(hex: dataString)
+        let data = Data(hexString: dataString) ?? Data()
         do {
             let transaction = try TronTransaction.parse(from: data)
             vc.toSignTransaction = transaction

@@ -45,7 +45,7 @@ class AccountsViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
-        tableView.register(R.nib.accountViewCell(), forCellReuseIdentifier: R.nib.accountViewCell.name)
+        //tableView.register(R.nib.accountViewCell, forCellReuseIdentifier: R.nib.accountViewCell.name)
     }
 
     override func viewWillAppear(_ animated: Bool) {
