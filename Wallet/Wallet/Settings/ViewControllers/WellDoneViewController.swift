@@ -16,7 +16,7 @@ class WellDoneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let imageView = UIImageView(image: R.image.mascot_happy())
+        let imageView = UIImageView(image: UIImage(named: "trash")) // R.image.mascot_happy())
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         let descriptionLabel = UILabel()

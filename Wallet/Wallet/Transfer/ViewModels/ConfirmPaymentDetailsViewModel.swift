@@ -138,7 +138,7 @@ struct ConfirmPaymentDetailsViewModel {
     }
 
     var statusImage: UIImage? {
-        return R.image.transaction_sent()
+        return UIImage(named: "dapps_icon")// R.image.transaction_sent()
     }
 
     private func amountWithSign(for amount: String) -> String {

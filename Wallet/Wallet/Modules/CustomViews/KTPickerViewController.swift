@@ -41,12 +41,12 @@ class KTPickerViewController: UIViewController {
     func configureUI() {
         
         let sureButton = UIButton(type: .custom)
-        sureButton.setImage(R.image.alert_sure(), for: .normal)
+       // sureButton.setImage(R.image.alert_sure(), for: .normal)
         sureButton.addTarget(self, action: #selector(sureButtonClick), for: .touchUpInside)
         containerView.addSubview(sureButton)
         
         let cancleButton = UIButton(type: .custom)
-        cancleButton.setImage(R.image.alert_cancle(), for: .normal)
+      //  cancleButton.setImage(R.image.alert_cancle(), for: .normal)
         cancleButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         containerView.addSubview(cancleButton)
         

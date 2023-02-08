@@ -49,10 +49,10 @@ enum URLServiceProvider {
 
     var image: UIImage? {
         switch self {
-        case .twitter: return R.image.settings_twitter()
-        case .telegram: return R.image.settings_telegram()
-        case .facebook: return R.image.settings_facebook()
-        case .discord: return R.image.settings_discord()
+        case .twitter: return UIImage(named: "settings_twitter") // R.image.settings_twitter // Image(systemName: "plus")
+        case .telegram: return  UIImage(named: "settings_telegram") // R.image.settings_telegram
+        case .facebook: return UIImage(named: "settings_facebook")  // R.image.settings_facebook
+        case .discord: return UIImage(named: "settings_discord") // R.image.settings_discord
         }
     }
 }

@@ -54,7 +54,7 @@ class NotificationsViewController: FormViewController {
             }.onChange { [unowned self] row in
                 self.didChange?(.state(isEnabled: row.value ?? false))
             }.cellSetup { cell, _ in
-                cell.imageView?.image = R.image.settings_push_notifications()
+                cell.imageView?.image = UIImage(named: "settings_push_notifications")// R.image.settings_push_notifications()
             }
 
         +++ Section(

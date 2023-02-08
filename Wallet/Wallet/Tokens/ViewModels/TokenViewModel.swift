@@ -28,7 +28,7 @@ class TokenViewModel {
     }
 
     var imagePlaceholder: UIImage? {
-        return R.image.ethereum_logo_256()
+        return UIImage(named: "balance_code" )// R.image.ethereum_logo_256()
     }
 
     private var symbol: String {

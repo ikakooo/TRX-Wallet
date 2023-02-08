@@ -20,7 +20,7 @@ class FieldAppereance {
         let qrButton = UIButton(type: .custom)
         qrButton.translatesAutoresizingMaskIntoConstraints = false
         qrButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        qrButton.setImage(R.image.balance_code(), for: .normal)
+        qrButton.setImage(UIImage(named: "balance_code" ), for: .normal) // R.image.balance_code()
 //        qrButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         UITapGestureRecognizer(addToView: qrButton) {
             qrAction()

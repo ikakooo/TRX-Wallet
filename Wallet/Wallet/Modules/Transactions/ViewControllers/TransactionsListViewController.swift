@@ -91,12 +91,12 @@ extension TransactionsListViewController: UITableViewDelegate {
 
 extension TransactionsListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let string = NSMutableAttributedString(string: "No Transactions", attributes: [NSAttributedStringKey.foregroundColor:UIColor.disabledTextColor, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14, weight: .medium)])
+        let string = NSMutableAttributedString(string: "No Transactions", attributes: [NSAttributedString.Key.foregroundColor:UIColor.disabledTextColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .medium)])
         return string
     }
     
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
-        return R.image.transaction_empty()
+        return UIImage(named: "natransaction_empty")
     }
     
     func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {

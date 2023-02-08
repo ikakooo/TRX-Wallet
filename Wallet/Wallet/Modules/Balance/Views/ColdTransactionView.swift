@@ -94,8 +94,8 @@ class ColdTransactionView: UIView, XibLoadable, Popable {
     
     
     func nextStep() {
-        self.bringSubview(toFront: scanView)
-        self.bringSubview(toFront: closeButton)
+        self.bringSubviewToFront(scanView)
+        self.bringSubviewToFront(closeButton)
         self.scanView.isHidden = false
         UIView.animate(withDuration: 0.35, animations: {
             self.scanView.alpha = 1.0
@@ -106,8 +106,8 @@ class ColdTransactionView: UIView, XibLoadable, Popable {
     }
     
     func previousStep() {
-        self.bringSubview(toFront: codeView)
-        self.bringSubview(toFront: closeButton)
+        self.bringSubviewToFront(codeView)
+        self.bringSubviewToFront(closeButton)
         self.codeView.isHidden = false
         UIView.animate(withDuration: 0.35, animations: {
             self.codeView.alpha = 1.0

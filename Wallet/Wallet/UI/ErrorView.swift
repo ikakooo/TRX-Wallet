@@ -16,7 +16,7 @@ class ErrorView: UIView {
     init(
         frame: CGRect = .zero,
         description: String = NSLocalizedString("errorView.description.label.title", value: "Something went wrong... Try again.", comment: ""),
-        image: UIImage? = R.image.error(),
+        image: UIImage? = UIImage(named: "error"),// R.image.error(),
         insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
         onRetry: (() -> Void)? = .none
     ) {

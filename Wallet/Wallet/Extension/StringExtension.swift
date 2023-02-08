@@ -23,8 +23,8 @@ extension NSString{
         let attrText = NSMutableAttributedString(string: self as String)
         for range in ranges {
             
-            attrText.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: fontsize), range: range)
-            attrText.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: range)
+            attrText.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: fontsize), range: range)
+            attrText.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
         }
         return attrText
     }
@@ -37,54 +37,54 @@ extension String {
     
     mutating func appendRichString(_ subString: String, color: UIColor, font: UIFont) -> NSMutableAttributedString{
         self += subString
-        var attributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey: Any]()
-        attributes[NSAttributedStringKey.font] = font
-        attributes[NSAttributedStringKey.foregroundColor] = color
+        var attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key: Any]()
+        attributes[NSAttributedString.Key.font] = font
+        attributes[NSAttributedString.Key.foregroundColor] = color
         return fontSizeAndColorSubString(subString, attributes: attributes)
     }
     
     public func fontSizeAndColorSubString(_ subString: String, color: UIColor, font: UIFont) -> NSMutableAttributedString {
-        var attributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey: Any]()
-        attributes[NSAttributedStringKey.font] = font
-        attributes[NSAttributedStringKey.foregroundColor] = color
+        var attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key: Any]()
+        attributes[NSAttributedString.Key.font] = font
+        attributes[NSAttributedString.Key.foregroundColor] = color
         return fontSizeAndColorSubString(subString, attributes: attributes)
     }
     
     public func addUnderline(color: UIColor, font: UIFont) -> NSMutableAttributedString{
-        var subAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey: Any]()
-        subAttributes[NSAttributedStringKey.font] = font
-        subAttributes[NSAttributedStringKey.foregroundColor] = color
-        subAttributes[NSAttributedStringKey.underlineStyle] = NSUnderlineStyle.styleSingle.rawValue
+        var subAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key: Any]()
+        subAttributes[NSAttributedString.Key.font] = font
+        subAttributes[NSAttributedString.Key.foregroundColor] = color
+        subAttributes[NSAttributedString.Key.underlineStyle] = NSUnderlineStyle.single.rawValue
         
         return fontSizeAndColorSubString(self, attributes: subAttributes)
     }
     
     public func strikethroughStyleSubString(_ subString: String,firstString: String, color: UIColor, font: UIFont) -> NSMutableAttributedString{
-        var subAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey: Any]()
-        subAttributes[NSAttributedStringKey.font] = font
-        subAttributes[NSAttributedStringKey.foregroundColor] = color
-        subAttributes[NSAttributedStringKey.strikethroughStyle] = NSUnderlineStyle.styleSingle.rawValue
+        var subAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key: Any]()
+        subAttributes[NSAttributedString.Key.font] = font
+        subAttributes[NSAttributedString.Key.foregroundColor] = color
+        subAttributes[NSAttributedString.Key.strikethroughStyle] = NSUnderlineStyle.single.rawValue
         
-        var firstAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey: Any]()
-        firstAttributes[NSAttributedStringKey.strikethroughStyle] = NSUnderlineStyle.styleNone.rawValue
+        var firstAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key: Any]()
+        firstAttributes[NSAttributedString.Key.strikethroughStyle] = []
         
         
         let attributedString = fontSizeAndColorSubString(subString, attributes: subAttributes)
         
         let firstStringRanges:[NSRange] = stringRange(firstString)
         for range in firstStringRanges {
-            attributedString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: NSUnderlineStyle.styleNone.rawValue, range: range)
+            attributedString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: [], range: range)
         }
         
         return attributedString
     }
     
-    public func fontSizeAndColorSubString(_ subString: String, attributes: [NSAttributedStringKey : Any]) -> NSMutableAttributedString {
+    public func fontSizeAndColorSubString(_ subString: String, attributes: [NSAttributedString.Key : Any]) -> NSMutableAttributedString {
         
         let ranges: [NSRange] = stringRange(subString)
         let attrText = NSMutableAttributedString(string: self)
         for range in ranges {
-            attrText.addAttributes(attributes as [NSAttributedStringKey : Any], range: range)
+            attrText.addAttributes(attributes as [NSAttributedString.Key : Any], range: range)
         }
         return attrText
     }
@@ -111,22 +111,22 @@ extension String {
         return stringWidth(font: font, height: height) + 20
     }
     func stringSize(font: UIFont, maxWidht: CGFloat) -> CGSize {
-        let rect: CGRect = NSString(string: self).boundingRect(with: CGSize(width: maxWidht, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let rect: CGRect = NSString(string: self).boundingRect(with: CGSize(width: maxWidht, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return rect.size
     }
     func stringWidth(font: UIFont, height: CGFloat = 15) -> CGFloat {
-        let rect = NSString(string: self).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return ceil(rect.width)
     }
     
     func stringHight(font: UIFont, width: CGFloat) -> CGFloat {
-        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return ceil(rect.height)
     }
     
     func ch_heightForComment(font: UIFont, width: CGFloat, maxHeight: CGFloat) -> CGFloat {
 
-        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return ceil(rect.height)>maxHeight ? maxHeight : ceil(rect.height)
     }
     

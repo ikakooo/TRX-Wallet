@@ -66,7 +66,7 @@ class LayoutableButton: UIButton {
         var titleLabelSize = titleLabel?.frame.size ?? CGSize()
         let text = titleLabel?.text
         let font = titleLabel?.font
-        let textSize = ((titleLabel?.text ?? "") as NSString).size(withAttributes: [NSAttributedStringKey.font: titleLabel!.font])
+        let textSize = ((titleLabel?.text ?? "") as NSString).size(withAttributes: [NSAttributedString.Key.font: titleLabel!.font])
         let frameSize = CGSize(width: textSize.width, height: textSize.height)
         if titleLabelSize.width + 0.5 < frameSize.width {
             titleLabelSize.width = frameSize.width
@@ -74,18 +74,18 @@ class LayoutableButton: UIButton {
         switch layoutType {
         case .top:
             let totalHeight = imageSize.height + titleLabelSize.height + imageTitleSpace
-            self.imageEdgeInsets = UIEdgeInsetsMake(-(totalHeight - imageSize.height), 0, 0, -titleLabelSize.width)
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, -imageSize.width, -(totalHeight - titleLabelSize.height), 0)
+            self.imageEdgeInsets = UIEdgeInsets(top: -(totalHeight - imageSize.height), left: 0, bottom: 0, right: -titleLabelSize.width)
+            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageSize.width, bottom: -(totalHeight - titleLabelSize.height), right: 0)
         case .left:
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, -imageTitleSpace, 0, 0)
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -imageTitleSpace)
+            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -imageTitleSpace, bottom: 0, right: 0)
+            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -imageTitleSpace)
         case .bottom:
             let totalHeight = imageSize.height + titleLabelSize.height + imageTitleSpace
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, -(totalHeight - imageSize.height), -titleLabelSize.width)
-            self.titleEdgeInsets = UIEdgeInsetsMake(-(totalHeight - titleLabelSize.height), -imageSize.width, 0, 0)
+            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -(totalHeight - imageSize.height), right: -titleLabelSize.width)
+            self.titleEdgeInsets = UIEdgeInsets(top: -(totalHeight - titleLabelSize.height), left: -imageSize.width, bottom: 0, right: 0)
         case .right:
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -(titleLabelSize.width * 2 + imageTitleSpace))
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageSize.width * 2 + imageTitleSpace), 0, 0)
+            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -(titleLabelSize.width * 2 + imageTitleSpace))
+            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: -(imageSize.width * 2 + imageTitleSpace), bottom: 0, right: 0)
         }
     }
     

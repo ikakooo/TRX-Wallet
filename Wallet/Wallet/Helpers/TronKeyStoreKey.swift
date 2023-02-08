@@ -185,9 +185,8 @@ public struct TronKeyStoreKey {
             }
             defer {
                 // Clear memory after signing
-                mnemonic.withMutableCharacters { chars in
-                    chars.replaceSubrange(chars.startIndex ..< chars.endIndex, with: [Character](repeating: " ", count: chars.count))
-                }
+                mnemonic = ""
+                mnemonic.forEach { _ in mnemonic += " " }
             }
             let wallet = TrustKeystore.Wallet(mnemonic: mnemonic, passphrase: passphrase, path: derivationPath)
             return EthereumCrypto.sign(hash: hash, privateKey: wallet.getKey(at: 0).privateKey)
@@ -216,9 +215,8 @@ public struct TronKeyStoreKey {
             }
             defer {
                 // Clear memory after signing
-                mnemonic.withMutableCharacters { chars in
-                    chars.replaceSubrange(chars.startIndex ..< chars.endIndex, with: [Character](repeating: " ", count: chars.count))
-                }
+                mnemonic = ""
+                mnemonic.forEach { _ in mnemonic += " " }
             }
             let wallet = TrustKeystore.Wallet(mnemonic: mnemonic)
             let key = wallet.getKey(at: 0).privateKey

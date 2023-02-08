@@ -189,7 +189,7 @@ extension UIView {
     /// 添加毛玻璃
     ///
     /// - Parameter stype: 毛玻璃样式
-    public func addBlurEffect(_ stype:UIBlurEffectStyle) {
+    public func addBlurEffect(_ stype:UIBlurEffect.Style) {
         
         let blurEffect = UIBlurEffect(style: stype)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)

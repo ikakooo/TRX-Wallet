@@ -69,7 +69,7 @@ class TransactionCoordinator: Coordinator {
             switch viewModel.isBuyActionAvailable {
             case true:
                 return [
-                    UIBarButtonItem(image: R.image.deposit(), landscapeImagePhone: R.image.deposit(), style: .done, target: self, action: #selector(deposit)),
+                    UIBarButtonItem(image: UIImage(named: "deposit"), landscapeImagePhone: UIImage(named: "deposit"), style: .done, target: self, action: #selector(deposit)),
                 ]
             case false: return []
             }

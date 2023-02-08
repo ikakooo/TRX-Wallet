@@ -19,7 +19,7 @@ struct InCoordinatorViewModel {
     var browserBarItem: UITabBarItem {
         return UITabBarItem(
             title: NSLocalizedString("browser.tabbar.item.title", value: "Browser", comment: ""),
-            image: R.image.dapps_icon(),
+            image: UIImage(named: "dapps_icon"),//R.image.dapps_icon(),
             selectedImage: nil
         )
     }
@@ -27,7 +27,7 @@ struct InCoordinatorViewModel {
     var transactionsBarItem: UITabBarItem {
         return UITabBarItem(
             title: NSLocalizedString("transactions.tabbar.item.title", value: "Transactions", comment: ""),
-            image: R.image.feed(),
+            image: UIImage(named: "dapps_icon"),// R.image.feed(),
             selectedImage: nil
         )
     }
@@ -35,7 +35,7 @@ struct InCoordinatorViewModel {
     var walletBarItem: UITabBarItem {
         return UITabBarItem(
             title: NSLocalizedString("wallet.navigation.title", value: "Wallet", comment: ""),
-            image: R.image.settingsWallet(),
+            image: UIImage(named: "dapps_icon"), // R.image.settingsWallet(),
             selectedImage: nil
         )
     }
@@ -43,7 +43,7 @@ struct InCoordinatorViewModel {
     var settingsBarItem: UITabBarItem {
         return UITabBarItem(
             title: NSLocalizedString("settings.navigation.title", value: "Settings", comment: ""),
-            image: R.image.settings_icon(),
+            image: UIImage(named: "dapps_icon"), // R.image.settings_icon(),
             selectedImage: nil
         )
     }

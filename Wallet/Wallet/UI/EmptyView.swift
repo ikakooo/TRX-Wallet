@@ -18,7 +18,7 @@ class EmptyView: UIView {
         frame: CGRect = .zero,
         title: String = NSLocalizedString("Empty", value: "Empty", comment: ""),
         actionTitle: String = NSLocalizedString("Refresh", value: "Refresh", comment: ""),
-        image: UIImage? = R.image.no_transactions_mascot(),
+        image: UIImage? = UIImage(named: "no_transactions_mascot"), // R.image.no_transactions_mascot(),
         insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
         onRetry: (() -> Void)? = .none
     ) {

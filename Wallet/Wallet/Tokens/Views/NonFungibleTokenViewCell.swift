@@ -12,7 +12,7 @@ class NonFungibleTokenViewCell: UITableViewCell {
     func configure(viewModel: NonFungibleTokenCellViewModel) {
         tokenImageView.kf.setImage(
             with: viewModel.imagePath,
-            placeholder: R.image.launch_screen_logo()
+            placeholder: Image(systemName: "plus")
         )
         nameTextLabel.text = viewModel.name
         annotationTextLabel.text = viewModel.annotation

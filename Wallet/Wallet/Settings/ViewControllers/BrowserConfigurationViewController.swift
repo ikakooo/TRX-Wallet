@@ -43,7 +43,7 @@ class BrowserConfigurationViewController: FormViewController {
         }.onPresent { _, selectorController in
                 selectorController.enableDeselection = false
         }.cellSetup { cell, _ in
-                cell.imageView?.image = R.image.settings_server()
+                cell.imageView?.image = UIImage(named: "settings_server")
         }.onPresent { _, selectorController in
                 selectorController.enableDeselection = false
                 selectorController.sectionKeyForValue = { option in
@@ -72,7 +72,7 @@ class BrowserConfigurationViewController: FormViewController {
                     }
             })
         }.cellSetup { cell, _ in
-            cell.imageView?.image = R.image.trash()
+            cell.imageView?.image = UIImage(named: "trash")
         }.cellUpdate { cell, _ in
             cell.textLabel?.textAlignment = .left
             cell.textLabel?.textColor = .black

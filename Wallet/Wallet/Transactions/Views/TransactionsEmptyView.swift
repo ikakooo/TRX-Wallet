@@ -23,7 +23,7 @@ class TransactionsEmptyView: UIView {
 
     init(
         title: String = NSLocalizedString("transactions.noTransactions.label.title", value: "No Transactions Yet!", comment: ""),
-        image: UIImage? = R.image.no_transactions_mascot(),
+        image: UIImage? = UIImage(named: "dapps_icon"), // R.image.no_transactions_mascot(),
         insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
         onRetry: (() -> Void)? = .none,
         onDeposit: ((_ sender: UIButton) -> Void)? = .none

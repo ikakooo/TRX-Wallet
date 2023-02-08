@@ -49,8 +49,8 @@ class ChainState {
     ) {
         self.config = config
         self.defaults = config.defaults
-        NotificationCenter.default.addObserver(self, selector: #selector(ChainState.stopTimers), name: .UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ChainState.restartTimers), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChainState.stopTimers), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChainState.restartTimers), name: UIApplication.didBecomeActiveNotification, object: nil)
         runScheduledTimers()
     }
     func start() {

@@ -75,7 +75,7 @@ struct TokenViewCellViewModel {
     }
 
     var placeholderImage: UIImage? {
-        return R.image.ethereum_logo_256()
+        return UIImage(named: "balance_code" )// R.image.ethereum_logo_256()
     }
 
     var imageUrl: URL? {

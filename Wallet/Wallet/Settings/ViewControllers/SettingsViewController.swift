@@ -85,7 +85,7 @@ class SettingsViewController: FormViewController, Coordinator {
                     }
                 }
             }.cellSetup { cell, _ in
-                cell.imageView?.image = R.image.settings_server()
+                cell.imageView?.image = UIImage(named: "trash")// UIImage(named: "trash") //.settings_server()
             }
 
             <<< AppFormAppearance.button { [weak self] row in
@@ -96,7 +96,7 @@ class SettingsViewController: FormViewController, Coordinator {
                 }, onDismiss: nil)
             }.cellUpdate { cell, _ in
                 cell.textLabel?.textColor = .black
-                cell.imageView?.image = R.image.settings_wallet()
+                cell.imageView?.image = UIImage(named: "trash")// UIImage(named: "trash") //.settings_wallet()
                 cell.textLabel?.text = NSLocalizedString("settings.wallets.button.title", value: "Wallets", comment: "")
                 cell.detailTextLabel?.text = String(account.address.description.prefix(10)) + "..."
                 cell.accessoryType = .disclosureIndicator
@@ -117,7 +117,7 @@ class SettingsViewController: FormViewController, Coordinator {
                     self.lock.deletePasscode()
                 }
             }.cellSetup { cell, _ in
-                cell.imageView?.image = R.image.settings_lock()
+                cell.imageView?.image = UIImage(named: "trash")// UIImage(named: "trash") //.settings_lock()
             }
 
             <<< AppFormAppearance.button { [weak self] row in
@@ -131,7 +131,7 @@ class SettingsViewController: FormViewController, Coordinator {
                 }, onDismiss: { _ in
             })
             }.cellUpdate { cell, _ in
-                cell.imageView?.image = R.image.settings_push_notifications()
+                cell.imageView?.image = UIImage(named: "trash") //.settings_push_notifications()
                 cell.textLabel?.text = NSLocalizedString("settings.pushNotifications.title", value: "Push Notifications", comment: "")
                 cell.accessoryType = .disclosureIndicator
             }
@@ -169,7 +169,7 @@ class SettingsViewController: FormViewController, Coordinator {
                     }
                 }
             }.cellSetup { cell, _ in
-                cell.imageView?.image = R.image.settingsCurrency()
+                cell.imageView?.image = UIImage(named: "trash") //.settingsCurrency()
             }
 
             <<< AppFormAppearance.button { row in
@@ -181,7 +181,7 @@ class SettingsViewController: FormViewController, Coordinator {
                 }, onDismiss: nil)
             }.cellUpdate { cell, _ in
                 cell.textLabel?.textColor = .black
-                cell.imageView?.image = R.image.dapps_icon()
+                cell.imageView?.image = UIImage(named: "trash") //.dapps_icon()
                 cell.textLabel?.text = NSLocalizedString("settings.browser.title", value: "DApp Browser", comment: "")
                 cell.accessoryType = .disclosureIndicator
             }
@@ -197,7 +197,7 @@ class SettingsViewController: FormViewController, Coordinator {
 
             <<< AppFormAppearance.button { button in
                 button.title = NSLocalizedString("settings.shareWithFriends.button.title", value: "Share With Friends", comment: "")
-                button.cell.imageView?.image = R.image.settingsShare()
+                button.cell.imageView?.image = UIImage(named: "trash") //.settingsShare()
             }.onCellSelection { [unowned self] cell, _  in
                 self.helpUsCoordinator.presentSharing(in: self, from: cell.contentView)
             }
@@ -207,7 +207,7 @@ class SettingsViewController: FormViewController, Coordinator {
 //            }.onCellSelection { [weak self] _, _  in
 //                self?.helpUsCoordinator.rateUs()
 //            }.cellSetup { cell, _ in
-//                cell.imageView?.image = R.image.settings_rating()
+//                cell.imageView?.image = UIImage(named: "trash") //.settings_rating()
 //            }
 
             +++ Section()
@@ -221,7 +221,7 @@ class SettingsViewController: FormViewController, Coordinator {
                 }, onDismiss: { _ in })
             }.cellUpdate { cell, _ in
                 cell.textLabel?.textColor = .black
-                cell.imageView?.image = R.image.settings_terms()
+                cell.imageView?.image = UIImage(named: "trash") //.settings_terms()
                 cell.textLabel?.text = NSLocalizedString("settings.support.title", value: "Support", comment: "")
                 cell.accessoryType = .disclosureIndicator
             }

@@ -18,7 +18,7 @@ class CheckDeviceCoordinator: Coordinator {
                 value: "Any 'jailbreak' app can access Trust's keychain data and steal your wallet! Wipe this wallet immediately and restore on a secure device.",
                 comment: ""
             ),
-            preferredStyle: UIAlertControllerStyle.alert
+            preferredStyle: UIAlertController.Style.alert
         )
         controller.popoverPresentationController?.sourceView = navigationController.view
         controller.addAction(UIAlertAction(title: NSLocalizedString("OK", value: "OK", comment: ""), style: .default))

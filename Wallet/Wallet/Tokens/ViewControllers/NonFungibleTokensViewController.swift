@@ -16,7 +16,7 @@ class NonFungibleTokensViewController: UIViewController {
     let refreshControl = UIRefreshControl()
     lazy var footer: NFTFooterView = {
         let footer = NFTFooterView()
-        footer.frame.size = footer.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        footer.frame.size = footer.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         return footer
     }()
 

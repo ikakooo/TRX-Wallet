@@ -132,7 +132,7 @@ class PopTipViewController: UIViewController {
         previousKeyWindow = UIApplication.shared.keyWindow
         alertWindow = UIWindow(frame: screenBounds)
         alertWindow.rootViewController = self
-        alertWindow.windowLevel = UIWindowLevelAlert
+        alertWindow.windowLevel = UIWindow.Level.alert
         alertWindow.makeKeyAndVisible()
         alertWindow.backgroundColor = UIColor.clear
         alertWindow.pheight = screenBounds.height

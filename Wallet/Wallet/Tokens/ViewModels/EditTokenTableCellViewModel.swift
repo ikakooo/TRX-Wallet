@@ -35,7 +35,7 @@ struct EditTokenTableCellViewModel {
     }
 
     var placeholderImage: UIImage? {
-        return R.image.ethereum_logo_256()
+        return UIImage(named: "dapps_icon")// R.image.ethereum_logo_256()
     }
 
     var imageUrl: URL? {

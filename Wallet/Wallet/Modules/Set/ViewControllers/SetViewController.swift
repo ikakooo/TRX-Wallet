@@ -186,13 +186,13 @@ enum SettingType {
         switch self {
             
         case .wallets:
-            return R.image.icon_Wallets()
+            return UIImage(named: "trash") // R.image.icon_Wallets()
         case .share:
-            return R.image.icon_set_share()
+            return UIImage(named: "trash") // R.image.icon_set_share()
         case .password:
-            return R.image.icon_set_password()
+            return UIImage(named: "trash")// R.image.icon_set_password()
         case .walletHelp:
-            return R.image.icon_cold()
+            return UIImage(named: "trash")// R.image.icon_cold()
         }
     }
     var settingTitle: String {

@@ -21,7 +21,7 @@ class BackupViewController: UIViewController {
 
         let warningImageView = UIImageView()
         warningImageView.translatesAutoresizingMaskIntoConstraints = false
-        warningImageView.image = R.image.back_up()
+        warningImageView.image = UIImage(named: "back_up")// R.image.back_up()
 
         let noBackupLabel = UILabel()
         noBackupLabel.translatesAutoresizingMaskIntoConstraints = false

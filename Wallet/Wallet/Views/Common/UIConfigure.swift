@@ -24,18 +24,18 @@ class UIConfigure {
         UINavigationBar.appearance().tintColor = UIColor.mainNormalColor
         UINavigationBar.appearance().isTranslucent = false
         
-        let image = R.image.ic_back()?.withRenderingMode(.alwaysOriginal)
+        let image = UIImage(named: "dapps_icon")?.withRenderingMode(.alwaysOriginal)
 
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = image
         UINavigationBar.appearance().backIndicatorImage = image
-        UINavigationBar.appearance().titleTextAttributes =  [NSAttributedStringKey.foregroundColor:UIColor.colorWithHex(hex: "#212837"), NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17, weight: .semibold)]
+        UINavigationBar.appearance().titleTextAttributes =  [NSAttributedString.Key.foregroundColor:UIColor.colorWithHex(hex: "#212837"), NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)]
         
         if #available(iOS 11.0, *) {
-            UINavigationBar.appearance().largeTitleTextAttributes =  [NSAttributedStringKey.foregroundColor:UIColor.mainNormalColor]
+            UINavigationBar.appearance().largeTitleTextAttributes =  [NSAttributedString.Key.foregroundColor:UIColor.mainNormalColor]
         } else {
             // Fallback on earlier versions
         }
-        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-200, 0), for:UIBarMetrics.default)
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -200, vertical: 0), for:UIBarMetrics.default)
     }
     
     //配置tableview 样式

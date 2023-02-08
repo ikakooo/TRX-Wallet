@@ -79,7 +79,7 @@ class ImportWalletViewController: FormViewController {
 
         title = viewModel.title
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: R.image.balance_code(), style: .done, target: self, action: #selector(openReader)),
+            UIBarButtonItem(image: UIImage(named: "balance_code" ), style: .done, target: self, action: #selector(openReader)),
         ]
 
         view.addSubview(importButton)

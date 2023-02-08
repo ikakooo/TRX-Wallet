@@ -6,7 +6,7 @@ class SplashView: UIView {
     init() {
         super.init(frame: CGRect.zero)
         self.backgroundColor = .white
-        let logoImageView = UIImageView(image: R.image.launch_screen_logo())
+        let logoImageView = UIImageView(image: UIImage(named: "launch_screen_logo"))
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(logoImageView)
         NSLayoutConstraint.activate([
